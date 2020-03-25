@@ -11,5 +11,7 @@
 
 ![Menu](/images/Menu.png)
 
-
+(Uodate in both current and initial value)
 ![Variables](/images/Variables.png)
+
+**A possible test workflow can be: CreateTable -> POSTDocument -> QueryDocument -> UpdateDocument -> QueryFilter -> DeleteDocument -> QueryDocument -> DeleteTable**
