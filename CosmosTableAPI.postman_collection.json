@@ -1,0 +1,643 @@
+{
+	"info": {
+		"_postman_id": "186a52a8-8816-44f6-b3f5-b6c0a7f73451",
+		"name": "CosmosTableAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POSTDocument",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f670c7b9-225d-4f5d-a9d6-1f54cd462948",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{authorization}}",
+						"type": "text"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{date}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "3.0;NetFx",
+						"type": "text"
+					},
+					{
+						"key": "MaxDataServiceVersion",
+						"value": "3.0;NetFx",
+						"type": "text"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "2015-12-11",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "{{content_length}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json;odata=nometadata",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"PartitionKey\": \"PartitionKeyValue\",\r\n    \"RowKey\": \"RowKeyValue\",\r\n    \"Name\": \"RandomName\"\r\n}"
+				},
+				"url": {
+					"raw": "https://{{cosmos_account}}.table.cosmos.azure.com:443/mytable",
+					"protocol": "https",
+					"host": [
+						"{{cosmos_account}}",
+						"table",
+						"cosmos",
+						"azure",
+						"com"
+					],
+					"port": "443",
+					"path": [
+						"mytable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateTable",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "84a53338-8551-4c12-b521-24c12a129faf",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{authorization}}",
+						"type": "text"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{date}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "3.0;NetFx",
+						"type": "text"
+					},
+					{
+						"key": "MaxDataServiceVersion",
+						"value": "3.0;NetFx",
+						"type": "text"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "2015-12-11",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "{{content_length}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json;odata=nometadata",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"TableName\":\"mytable\"  \r\n}  \r\n"
+				},
+				"url": {
+					"raw": "https://{{cosmos_account}}.table.cosmos.azure.com:443/Tables",
+					"protocol": "https",
+					"host": [
+						"{{cosmos_account}}",
+						"table",
+						"cosmos",
+						"azure",
+						"com"
+					],
+					"port": "443",
+					"path": [
+						"Tables"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateEntity",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "84a53338-8551-4c12-b521-24c12a129faf",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{authorization}}",
+						"type": "text"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{date}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "3.0;NetFx",
+						"type": "text"
+					},
+					{
+						"key": "MaxDataServiceVersion",
+						"value": "3.0;NetFx",
+						"type": "text"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "2015-12-11",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "{{content_length}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json;odata=nometadata",
+						"type": "text"
+					},
+					{
+						"key": "If-Match",
+						"value": "*",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"PartitionKey\": \"PartitionKeyValue\",\r\n    \"RowKey\": \"RowKeyValue\",\r\n    \"Name\": \"RandomName\",\r\n    \"NewAttribute\":\"NewValue\"\r\n}"
+				},
+				"url": {
+					"raw": "https://{{cosmos_account}}.table.cosmos.azure.com:443/mytable(PartitionKey='PartitionKeyValue',RowKey='RowKeyValue')",
+					"protocol": "https",
+					"host": [
+						"{{cosmos_account}}",
+						"table",
+						"cosmos",
+						"azure",
+						"com"
+					],
+					"port": "443",
+					"path": [
+						"mytable(PartitionKey='PartitionKeyValue',RowKey='RowKeyValue')"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "QueryFilter",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "4329b4f4-44ca-429e-aac4-b01938b4ac6a",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{authorization}}",
+						"type": "text"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{date}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "3.0;NetFx",
+						"type": "text"
+					},
+					{
+						"key": "MaxDataServiceVersion",
+						"value": "3.0;NetFx",
+						"type": "text"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "2015-12-11",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json;odata=nometadata",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{cosmos_account}}.table.cosmos.azure.com:443/mytable?$filter=Name eq 'RandomName'",
+					"protocol": "https",
+					"host": [
+						"{{cosmos_account}}",
+						"table",
+						"cosmos",
+						"azure",
+						"com"
+					],
+					"port": "443",
+					"path": [
+						"mytable"
+					],
+					"query": [
+						{
+							"key": "$filter",
+							"value": "Name eq 'RandomName'"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "QueryDocument",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f993fee8-be06-4451-b89f-2d36240e88db",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{authorization}}",
+						"type": "text"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{date}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "3.0;NetFx",
+						"type": "text"
+					},
+					{
+						"key": "MaxDataServiceVersion",
+						"value": "3.0;NetFx",
+						"type": "text"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "2015-12-11",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json;odata=nometadata",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{cosmos_account}}.table.cosmos.azure.com:443/mytable(PartitionKey='PartitionKeyValue',RowKey='RowKeyValue')",
+					"protocol": "https",
+					"host": [
+						"{{cosmos_account}}",
+						"table",
+						"cosmos",
+						"azure",
+						"com"
+					],
+					"port": "443",
+					"path": [
+						"mytable(PartitionKey='PartitionKeyValue',RowKey='RowKeyValue')"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteDocument",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f993fee8-be06-4451-b89f-2d36240e88db",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{authorization}}",
+						"type": "text"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{date}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "3.0;NetFx",
+						"type": "text"
+					},
+					{
+						"key": "MaxDataServiceVersion",
+						"value": "3.0;NetFx",
+						"type": "text"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "2015-12-11",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json;odata=nometadata",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{cosmos_account}}.table.cosmos.azure.com:443/mytable(PartitionKey='PartitionKeyValue',RowKey='RowKeyValue')",
+					"protocol": "https",
+					"host": [
+						"{{cosmos_account}}",
+						"table",
+						"cosmos",
+						"azure",
+						"com"
+					],
+					"port": "443",
+					"path": [
+						"mytable(PartitionKey='PartitionKeyValue',RowKey='RowKeyValue')"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteTable",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "84a53338-8551-4c12-b521-24c12a129faf",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{authorization}}",
+						"type": "text"
+					},
+					{
+						"key": "x-ms-date",
+						"value": "{{date}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "DataServiceVersion",
+						"value": "3.0;NetFx",
+						"type": "text"
+					},
+					{
+						"key": "MaxDataServiceVersion",
+						"value": "3.0;NetFx",
+						"type": "text"
+					},
+					{
+						"key": "x-ms-version",
+						"value": "2015-12-11",
+						"type": "text"
+					},
+					{
+						"key": "Content-Length",
+						"value": "{{content_length}}",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json;odata=nometadata",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{cosmos_account}}.table.cosmos.azure.com:443/Tables('mytable')",
+					"protocol": "https",
+					"host": [
+						"{{cosmos_account}}",
+						"table",
+						"cosmos",
+						"azure",
+						"com"
+					],
+					"port": "443",
+					"path": [
+						"Tables('mytable')"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "dfdf9ed3-4c42-4a6d-a3ec-1163eebfa810",
+				"type": "text/javascript",
+				"exec": [
+					"pm.variables.set(\"date\", new Date().toUTCString());",
+					"pm.request.body ? pm.variables.set(\"content_length\",pm.request.body.toString().length):\"\";",
+					"",
+					"const canonicalResource = \"/\"+pm.variables.get(\"cosmos_account\") + pm.request.url.getPath();",
+					"",
+					"var finalstring = canonicalResource.toString().replace(/'/g,\"%27\");",
+					"",
+					"const signatureRaw = new Date().toUTCString()+\"\\n\"+finalstring;",
+					"",
+					"const storageKey = CryptoJS.enc.Base64.parse(pm.variables.get(\"primary_key\"));",
+					"",
+					"const signatureBytes = CryptoJS.HmacSHA256(signatureRaw,storageKey);",
+					"",
+					"const signatureEncoded = CryptoJS.enc.Base64.stringify(signatureBytes);",
+					"",
+					"pm.variables.set(\"authorization\", ",
+					"    `SharedKeyLite ${pm.variables.get(\"cosmos_account\")}:${signatureEncoded}`);",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "dc76491b-1a84-4fb0-9fd6-fdf677909d04",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "06ff2563-cd7a-400f-b0b4-48ffd283ba3f",
+			"key": "date",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "07f6c9d7-6674-49a6-b90e-53955a5c396f",
+			"key": "cosmos_account",
+			"value": "*******",
+			"type": "string"
+		},
+		{
+			"id": "de7a5352-5482-4034-a558-c63224c77fa4",
+			"key": "primary_key",
+			"value": "********",
+			"type": "string"
+		},
+		{
+			"id": "d29baf16-52f1-4797-b007-561b6e2d2b27",
+			"key": "authorization",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"id": "71351430-4a03-4cf9-bf29-95711f54f8e6",
+			"key": "content_lenght",
+			"value": "",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
